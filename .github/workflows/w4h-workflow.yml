@@ -1,0 +1,37 @@
+name: Convert Markdown to HTML
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch name as necessary, e.g., 'main' or 'master'
+    paths:
+      - '**/*.md'  # Trigger the workflow only when Markdown files are changed
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Check out the code
+
+      - name: Setup Pandoc
+        run: sudo apt-get install pandoc  # Install Pandoc
+
+      - name: Convert Markdown to HTML
+        run: |
+          mkdir -p html  # Create a folder to store HTML files
+          for file in $(find . -name '*.md'); do
+            pandoc "$file" -o "html/${file%.md}.html"  # Convert each Markdown file to HTML
+            mv "${file%.md}.html" ./html/  # Move the HTML files to the html directory
+          done
+
+      - name: Commit HTML files
+        run: |
+          git config --local user.name 'github-actions[bot]'  # Set Git username
+          git config --local user.email 'github-actions[bot]@users.noreply.github.com'  # Set Git email
+          git add html/*  # Add HTML files to Git
+          git commit -m 'Automatically convert MD to HTML'  # Commit changes
+          git push  # Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub Token for authorization
