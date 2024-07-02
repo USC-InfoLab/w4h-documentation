@@ -171,6 +171,7 @@ docker rmi <image name>
 Then access `http://{your_server_ip}:8501/` to see the dashboard.
 
 username: admin 
+
 passward: admin
 
 more details please check [Use W4h dashboard to track your patients' health data](https://github.com/USC-InfoLab/w4h-documentation/blob/main/docs/getting-started/how_to_start.md)
