@@ -21,12 +21,21 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pandoc
 
+      - name: List files for debugging
+        run: |
+          echo "Listing all Markdown files:"
+          find . -name '*.md'
+          echo "Current directory structure:"
+          ls -R
+
       - name: Convert Markdown to HTML
         run: |
           mkdir -p html
-          for file in $(find . -name '*.md'); do
-            htmlfile="html/${file%.md}.html"
+          find . -name '*.md' | while read -r file; do
+            htmlfile="html/${file#./}"
+            htmlfile="${htmlfile%.md}.html"
             echo "Converting $file to $htmlfile"
+            mkdir -p "$(dirname "$htmlfile")"
             pandoc "$file" -o "$htmlfile"
             if [ $? -eq 0 ]; then
               echo "Successfully converted $file"
