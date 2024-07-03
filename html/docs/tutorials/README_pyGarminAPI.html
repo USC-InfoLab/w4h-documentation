@@ -1,0 +1,79 @@
+<h1 id="pygarminapi">pyGarminAPI</h1>
+<p>pyGarminAPI is a Python library that provides a convenient way to interact with the Garmin API using the Garmin Pull API. With this library, you can easily send signed requests, authenticate with your Garmin API credentials, and fetch activity and health data using Garmin Pull API for your Garmin devices.</p>
+<p>The Garmin Pull API allows you to retrieve a wide range of data, including activities such as running, cycling, and swimming, as well as health data like heart rate and step count. By utilizing pyGarminAPI, you can effortlessly integrate Garmin data into your Python applications or scripts.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<p>For detailed instructions on how to use the functions and modules provided by pyGarminAPI, please refer to the <a href="https://usc-infolab.github.io/pyGarminAPI/">pyGarminAPI Documentation</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before using pyGarminAPI, ensure you have the following prerequisites:</p>
+<ul>
+<li>Python 3.8 or higher installed on your system.</li>
+<li>Access to the Garmin API with valid API credentials.</li>
+<li>Database setup with the required tables:
+<ul>
+<li>A <code>GARMIN_USER</code> table with at least <code>user_id</code> and <code>email</code> columns for each user.</li>
+<li>An <code>GARMIN_AUTHORIZATION</code> table with at least <code>user_id</code>, <code>access_token</code>, and <code>token_secret</code> fields.</li>
+</ul></li>
+</ul>
+<p>If you don’t have access to the Garmin API, you can follow these steps to request access and create a Garmin Developer Account:</p>
+<ol type="1">
+<li>Visit the <a href="https://developer.garmin.com/gc-developer-program/overview/">Garmin Developer Program</a> page.</li>
+<li>Click on “Request Now” to access the registration form.</li>
+<li>Fill in the required information in the registration form and submit your request.</li>
+<li>Wait for approval from the Garmin Developer Program team. Once approved, you will receive an email with further instructions.</li>
+<li>Follow the instructions in the email to complete your Garmin Developer Account setup.</li>
+<li>Once your developer account is set up, log in to the <a href="https://developerportal.garmin.com/">Garmin Developer Portal</a> and navigate to the “Apps” section.</li>
+<li>Click on “Create New App” and provide the necessary details for your application.</li>
+<li>Make sure to specify the appropriate callback URL(s) if needed.</li>
+<li>After creating your app, you will receive your API credentials, including the Consumer Key and Consumer Secret. Keep these credentials secure, as they are essential for accessing the Garmin API.</li>
+</ol>
+<p>Ensure that you have your API credentials ready before using pyGarminAPI.</p>
+<h2 id="installation">Installation</h2>
+<p>To get started with pyGarminAPI, follow these steps:</p>
+<ol type="1">
+<li><p>Clone the pyGarminAPI repository to your local machine:</p>
+<pre class="shell"><code>git clone https://github.com/NIH-W4H/pyGarminAPI.git</code></pre></li>
+<li><p>Change into the pyGarminAPI directory: <code>shell     cd pyGarminAPI</code></p></li>
+<li><p>Install the required dependencies: <code>bash     pip install -r requirements.txt</code></p></li>
+<li><p>Copy the config.yml.example file as config.yml: <code>shell     cp config.yml.example config.yml</code></p></li>
+<li><p>Edit the config.yml file with your database connection information and table names for the <strong>user</strong> and <strong>authorization</strong> tables.</p></li>
+<li><p>You’re now ready to use pyGarminAPI!</p></li>
+</ol>
+<h2 id="usage">Usage</h2>
+<p>To use pyGarminAPI in your Python scripts, you can import the necessary functions from the <code>garmin_api</code> module. Here’s an example:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="im">import</span> pyGarminAPI.garmin_api <span class="im">as</span> garmin_api</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="co"># Generate the signature</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>signatures <span class="op">=</span> garmin_api.generate_signature()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>signature <span class="op">=</span> signatures[<span class="st">&#39;signature&#39;</span>][<span class="dv">0</span>]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="co"># Get the daily summary health data</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>start_date <span class="op">=</span> datetime(<span class="dv">2023</span>, <span class="dv">4</span>, <span class="dv">15</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>end_date <span class="op">=</span> start_date <span class="op">+</span> timedelta(days<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>current_date <span class="op">=</span> start_date</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a><span class="cf">while</span> current_date <span class="op">&lt;=</span> end_date:</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>    <span class="co"># Generate string for current date</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a>    start_date_str <span class="op">=</span> current_date.strftime(<span class="st">&#39;%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S&#39;</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>    end_day_str <span class="op">=</span> (current_date <span class="op">+</span> timedelta(days<span class="op">=</span><span class="dv">1</span>)).strftime(<span class="st">&#39;%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S&#39;</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a>    <span class="bu">print</span>(start_date_str, end_day_str)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a>    <span class="bu">print</span>(garmin_api.get_daily_summary_health(signature, start_date_str, end_day_str))</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true"></a>    <span class="co"># Increment current date by one day</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true"></a>    current_date <span class="op">+=</span> timedelta(days<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<p>Please note that this is just a basic example. Make sure to adapt it to your specific use case and provide additional instructions, such as error handling and further details on the available functions.</p>
+<h2 id="features">Features</h2>
+<p>pyGarminAPI provides the following conveniences: - Seamless authentication process with your Garmin API credentials. - Fetch detailed information about activities, including activity type, distance, and duration. - Retrieve health data such as heart rate and step count. - Simplified handling of signed requests to the Garmin API.</p>
+<p>By leveraging the power of pyGarminAPI, you can create applications that analyze, visualize, or process your Garmin activity and health data in Python. Whether you’re building a fitness tracking app, conducting data analysis, or exploring personal health trends, pyGarminAPI provides a robust foundation for working with the Garmin API.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions to pyGarminAPI are welcome! If you find any bugs or have suggestions for new features, please open an issue on the GitHub repository. If you’d like to contribute code, feel free to open a pull request.</p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the <a href="https://github.com/NIH-W4H/pyGarminAPI/blob/main/LICENSE">MIT License</a>. Feel free to use and modify this code for your own purposes.</p>
