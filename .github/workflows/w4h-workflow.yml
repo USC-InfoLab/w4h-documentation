@@ -24,7 +24,7 @@ jobs:
       - name: List files for debugging
         run: |
           echo "Listing all files:"
-          find . -type f
+          find . -name '*.md'
           echo "Current directory structure:"
           ls -R
 
@@ -41,10 +41,15 @@ jobs:
               echo "Successfully converted $file"
             else
               echo "Failed to convert $file"
+              echo "Attempting to debug file: $file"
+              ls -l "$file"
+              echo "Current directory structure at failure point:"
+              ls -R
             fi
           done
 
       - name: Commit HTML files
+        if: success()
         run: |
           git config --local user.name 'github-actions[bot]'
           git config --local user.email 'github-actions[bot]@users.noreply.github.com'
