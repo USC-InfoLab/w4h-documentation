@@ -36,7 +36,7 @@ jobs:
             htmlfile="${htmlfile%.md}.html"
             echo "Converting $file to $htmlfile"
             mkdir -p "$(dirname "$htmlfile")"
-            pandoc "$file" -o "$htmlfile"
+            pandoc "$file" -o "$htmlfile" --extract-media=html
             if [ $? -eq 0 ]; then
               echo "Successfully converted $file"
             else
