@@ -19,7 +19,7 @@ Click the "import page" button on the left side of the dashboard, you will see a
 
     Let's start from creating a new database instance:  
     First, Select "Create new W4H database instance"    
-    <div style="display: flex;justify-content: center; "><img src="/static/create_new_db.png" alt="create_new_db" style="margin:10px;width:800px;border: 2px solid rgba(252, 176, 69, 0.3);"/></div>
+    <div style="display: flex;justify-content: center; "><img src="../../static/create_new_db.png" alt="create_new_db" style="margin:10px;width:800px;border: 2px solid rgba(252, 176, 69, 0.3);"/></div>
     
     Second, type in the name of database you want to make, and click "create". In this case we name it "test2"
     <div style="display: flex;justify-content: center; "><img src="/static/set_db_name.png" alt="set_db_name" style="margin:10px;width:800px;border: 2px solid rgba(252, 176, 69, 0.3);"/></div>
