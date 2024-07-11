@@ -1,0 +1,47 @@
+<h1 id="streamsim-real-time-data-streaming-simulator">StreamSim: Real-Time Data Streaming Simulator</h1>
+<p>StreamSim is a real-time data streaming simulator tool that allows researchers and developers to simulate real-time streaming behavior for tabular data. It provides a convenient way to test real-time applications when the actual real-time data source is not yet available or when simulating different scenarios for testing purposes.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<p>For detailed instructions on how to use the functions and modules provided by StreamSim, please refer to the <a href="https://nih-w4h.github.io/StreamSim/">StreamSim Documentation</a>.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Simulates real-time streaming behavior for tabular data.</li>
+<li>Supports stream simulation from a database table or a CSV file.</li>
+<li>Customizable data processing and simulation logic.</li>
+<li>Easy configuration.</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before using StreamSim, make sure you have the following prerequisites installed:</p>
+<ul>
+<li>Python 3.x</li>
+<li>Required dependencies (see Installation section)</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<ol type="1">
+<li><p>Clone the repository:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">git</span> clone https://github.com/NIH-W4H/StreamSim.git</span></code></pre></div></li>
+<li><p>Install the required dependencies:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">pip</span> install -r requirements.txt</span></code></pre></div></li>
+</ol>
+<h2 id="usage">Usage</h2>
+<ol type="1">
+<li><p>Configure the application settings in the <code>conf.py</code> file. Specify the database connection details, dataset path, timeout interval, and other relevant parameters.</p></li>
+<li><p>Implement the desired data processing logic in the <code>process_stream()</code> function in the <code>stream_sim.py</code> file. Customize it to suit your specific requirements.</p></li>
+<li><p>Start the Flask server to enable stream simulation:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="ex">python</span> stream_sim.py</span></code></pre></div></li>
+<li><p>In a separate terminal, run the ingest_stream.py script to periodically fetch streams from the Flask server: <code>bash     python ingest_stream.py</code></p></li>
+<li><p>Observe the simulated stream data and verify that it meets your expectations.</p></li>
+</ol>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.</p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the <a href="https://github.com/NIH-W4H/StreamSim/blob/main/LICENSE">MIT License</a>. Feel free to use and modify this code for your own purposes.</p>

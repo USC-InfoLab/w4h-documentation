@@ -1,0 +1,40 @@
+<h1 id="use-w4h-dashboard-to-track-your-patients-health-data">Use W4h dashboard to track your patients’ health data</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The W4H GeoMTS dashboard is designed to provide visualization and analysis capabilities for GeoMTS data catered specifically for Apple Watch demo purposes.</p>
+<h2 id="how-to-play-with-it">How to play with it</h2>
+<ol start="0" type="1">
+<li><p><strong>Log in</strong><br />
+We have provided a default account for you to test the system. In the future, w4h will be polished to support multiple users and password management. The default account is: &gt; username: admin<br />
+password: admin</p></li>
+<li><p><strong>Create/Manage your database instance in your DB server:</strong><br />
+At this moment, you should have read the Setting up tutorial and set up your database server. If you already have data in proper format in your database, you can skip this step.<br />
+Click the “import page” button on the left side of the dashboard, you will see a page like this:<br />
+<span class="image">import_page_create</span></p>
+<p>Let’s start from creating a new database instance:<br />
+First, Select “Create new W4H database instance”<br />
+<span class="image">create_new_db</span></p>
+<p>Second, type in the name of database you want to make, and click “create”. In this case we name it “test2” <span class="image">import_page_create</span> If it’s created successfully, you will see a message like this:<br />
+<span class="image">import_page_create</span></p>
+<p>Third, select “Choose existing W4H database instance”<br />
+<span class="image">import_page_create</span> Select the database you just created<br />
+<span class="image">import_page_create</span></p>
+<p>For the Following step, if you need some test file, try to download here:<br />
+<a href="./../../images/synthetic_subject_data.csv">synthetic_subject_data.csv</a></p>
+<p><a href="./../../images/synthetic_timeseries_data_reduced.csv">synthetic_timeseries_data_reduced.csv</a></p>
+<p>Fourth, Upload your subjects csv file, and check “Populate subject table name”. <span class="image">import_page_create</span> After making sure corresponding Column are all correct, click “Populate database” at the bottom.<br />
+<span class="image">import_page_create</span></p>
+<p>Fifth, upload your time series csv file<br />
+<span class="image">import_page_create</span> After making sure corresponding Column are all correct, click “Populate database” at the bottom.<br />
+<span class="image">import_page_create</span></p>
+<p>(Optional)Sixth, open your DB management tool, such as PgAdmin4, and check if the data is populated correctly.<br />
+<span class="image">import_page_create</span></p></li>
+<li><p><strong>choose your db in the input page, then setup it!</strong></p>
+<p>choose your db in the input page<br />
+<span class="image">import_page_create</span></p>
+<p>select the subjects and control group you want to check<br />
+<span class="image">import_page_create</span></p>
+<p>select if you want to simulate the data click “show result”</p></li>
+<li><p><strong>check the result page</strong><br />
+You are there!<br />
+<span class="image">import_page_create</span></p></li>
+</ol>
