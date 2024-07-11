@@ -4,13 +4,15 @@ W4H ImportHub is designed to integrate offline datasets, like CSV files, into th
 
 ## Table of Contents
 
-- [Documentation](#documentation)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [W4H ImportHub: Effortlessly Bridging Your Data to the W4H Ecosystem](#w4h-importhub-effortlessly-bridging-your-data-to-the-w4h-ecosystem)
+  - [Table of Contents](#table-of-contents)
+  - [Documentation](#documentation)
+  - [Features](#features)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Documentation
 

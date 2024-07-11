@@ -11,5 +11,5 @@ db's host,username,password,database name, and the port it is listening to.
 login in with username and password(use "admin" for both username and password in first time)
 
 Then following instruction to set your database
-    ![import_page_create](../static/manage_database_1.png)
-    ![import_page_create](../static/manage_database_2.png)
+    ![import_page_create](./../../static/manage_database_1.png)
+    ![import_page_create](./../../static/manage_database_2.png)
