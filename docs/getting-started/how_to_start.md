@@ -1,6 +1,7 @@
 # Use W4h dashboard to track your patients' health data
 
 ## Introduction
+
 The W4H GeoMTS dashboard is designed to provide visualization and analysis capabilities for GeoMTS data catered specifically for Apple Watch demo purposes.
 
 ## How to play with it

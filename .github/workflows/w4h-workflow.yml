@@ -30,7 +30,7 @@ jobs:
 
       - name: Convert Markdown to HTML
         run: |
-          find . -name '*.md' | while read -r file; do
+          find ./docs -name '*.md' | while read -r file; do
             htmlfile="${file%.md}.html"
             echo "Converting $file to $htmlfile"
             pandoc "$file" -o "$htmlfile" --extract-media .

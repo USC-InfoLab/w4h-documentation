@@ -1,2 +1,5 @@
-# w4h-documentation
-End user documentation for the W4H platform
+# W4H Documentation
+
+Documentation for the W4H Toolkit.
+
+[Home](docs/index.md)
