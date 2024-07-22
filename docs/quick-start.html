@@ -5,10 +5,17 @@
 <li>Using Docker Desktop GUI</li>
 </ul>
 <h2 id="starting-the-container-using-the-command-line">Starting the Container Using the Command Line</h2>
-<p>This option is the preferred…</p>
+<p>This option is the preferred way to start the image as it will download it and initialize the container. To start the container as a background process, execute:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">docker</span> run -p 5432:5432 -e POSTGRES_DB=admin -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -e hostname=db -dp 8501:8501 -p 8888:8888 --name w4h uscimsc/w4h:preview</span></code></pre></div>
+<p>You can verify that the container is running with</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">docker</span> ps</span></code></pre></div>
 <h2 id="starting-the-container-using-docker-desktop">Starting the Container Using Docker Desktop</h2>
 <p>Once that is done start and type <code>uscimsc/w4h</code> in the search bar and select the <code>preview</code> tagged image. After pulling to download the image, run the container by clicking on the “run” icon under “Actions” next to the image name.</p>
 <p><span class="image">Starting the container</span></p>
 <h2 id="using-the-dashboard">Using the Dashboard</h2>
+<p>When the container is running you can open the dashboard</p>
 <h2 id="using-the-sample-notebookes">Using the Sample Notebookes</h2>
 <h2 id="next-steps">Next Steps</h2>
+<ul>
+<li><a href="docker/working-with-docker.md">Working Docker</a>)</li>
+</ul>
