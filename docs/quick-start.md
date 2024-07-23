@@ -13,15 +13,22 @@ This option is the preferred way to start the image as it will download it and i
 docker run -p 5432:5432 -e POSTGRES_DB=admin -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -e hostname=db -dp 8501:8501 -p 8888:8888 --name w4h uscimsc/w4h:preview
 ```
 
-You can verify that the container is running with 
+You can verify that the container is running with:
 
 ```sh
 docker ps
 ```
 
+Stop and start containers with:
+
+```sh
+docker stop <CONTAINER ID>
+docker start <CONTAINER ID>  #restart
+```
+
 ## Starting the Container Using Docker Desktop
 
-Once that is done start and type `uscimsc/w4h` in the search bar and select  the `preview` tagged image. After pulling to download the image, run the container by clicking on the “run” icon under “Actions” next to the image name.
+Once that is done start Docker Desktop, click on `images` and type `uscimsc/w4h` in the search bar, then select  the `preview` tagged image and pull to download the image. To run the container, click on the `run` icon under `Actions` next to the image name.
 
 ![Starting the container](images/docker_readme.png)
 
