@@ -1,5 +1,6 @@
 ---
 title: W4H-app Setup for Developers
+card_title: ''
 description: ''
 ---
 

@@ -1,5 +1,7 @@
 ---
+slug: ansel-todo
 title: Todo
+card_title: ''
 description: ''
 ---
 
