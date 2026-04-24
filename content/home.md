@@ -1,6 +1,14 @@
 ---
+slug: home
 title: Welcome to W4H
+card_title: Welcome to W4H
 description: Welcome to the W4H Toolkit
+action_label: Open
+sort_order: 0
+hidden: false
+show_in_docs: false
+is_feature_card: false
+card_order: 0
 ---
 
 <p class="fs-4">Welcome to the <strong>W4H Toolkit</strong>!</p>

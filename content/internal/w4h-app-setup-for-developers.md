@@ -1,7 +1,54 @@
 ---
+id: 7e1e6339-bb0f-46e2-826e-f9fc6b49dfae
+slug: w4h-app-setup-for-developers
 title: W4H-app Setup for Developers
 card_title: ''
 description: ''
+action_label: Open
+doc_type: internal
+sort_order: 0
+hidden: false
+updated_at: '2026-04-13T16:26:03.005261'
+is_feature_card: false
+show_in_docs: true
+toc:
+- id: w4h-app-setup-for-developers
+  level: 2
+  title: W4H-app Setup for Developers
+- id: system-architecture
+  level: 3
+  title: System architecture
+- id: first-time-setup-workflow
+  level: 3
+  title: First-time setup workflow
+- id: w4h-app-setup
+  level: 3
+  title: w4h-app Setup
+- id: recommended-ide-setup
+  level: 4
+  title: Recommended IDE Setup
+- id: recommended-browser-setup
+  level: 4
+  title: Recommended Browser Setup
+- id: customize-configuration
+  level: 4
+  title: Customize configuration
+- id: project-setup
+  level: 4
+  title: Project Setup
+- id: compile-and-hot-reload-for-development
+  level: 4
+  title: Compile and Hot-Reload for Development
+- id: compile-and-minify-for-production
+  level: 4
+  title: Compile and Minify for Production
+- id: run-end-to-end-tests-with-playwright-https-playwright-dev-
+  level: 4
+  title: Run End-to-End Tests with [Playwright](https://playwright.dev)
+- id: lint-with-eslint-https-eslint-org-
+  level: 4
+  title: Lint with [ESLint](https://eslint.org/)
+card_order: 0
 ---
 
 # W4H-app Setup for Developers
