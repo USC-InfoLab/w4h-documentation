@@ -1,6 +1,7 @@
 ---
 title: ⚡️Quick Start
 description: Get started with W4H in 5 minutes
+is_feature_card: true
 ---
 
 # ⚡️ Quick Start
