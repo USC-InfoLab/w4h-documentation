@@ -1,6 +1,8 @@
 ---
 title: Frequently Asked Questions
 description: Common questions and answers
+card_title: FAQ
+sort_order: 10
 ---
 
 # Frequently Asked Questions

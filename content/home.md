@@ -1,6 +1,8 @@
 ---
 title: Welcome to W4H
 description: Welcome to the W4H Toolkit
+card_title: Welcome to W4H
+show_in_docs: false
 ---
 
 <p class="fs-4">Welcome to the <strong>W4H Toolkit</strong>!</p>
