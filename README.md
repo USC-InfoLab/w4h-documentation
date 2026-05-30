@@ -1,5 +1,5 @@
 # W4H Documentation
 
-Documentation for the W4H Toolkit.
+Documentation for the W4H Toolkit. The documentation consists of markdown files under `content`.
 
-[Home](docs/index.md)
+[Home](content/home.md)
